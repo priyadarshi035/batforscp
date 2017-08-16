@@ -33,9 +33,7 @@ echo.>"C:\Users\cloud_user\check5.txt"
     echo %NewestFile%
 echo.>"C:\Users\cloud_user\check6.txt"
     FOR /F "delims=|" %%I IN ('DIR "%DatabaseBackupPath%\*.001" /B /O:D') DO SET  NewestFile=%%I
-    curl -k -i -H "X-JFrog-Art-Api: AKCp5Z2hL6AoTZbcqMeEbXZvJoxcB9AxyvCB979anTH83VViM9jKhaazoav8H4hNLtZKWVciW" -X PUT  
-
-"https://gbsartifactory.in.edst.ibm.com/artifactory/ScopePlus/%1-db_backup_Maverick/%NewestFile%" -T %NewestFile%
+    curl -k -i -H "X-JFrog-Art-Api: AKCp5Z2hL6AoTZbcqMeEbXZvJoxcB9AxyvCB979anTH83VViM9jKhaazoav8H4hNLtZKWVciW" -X PUT "https://gbsartifactory.in.edst.ibm.com/artifactory/ScopePlus/%1-db_backup_Maverick/%NewestFile%" -T %NewestFile%
 echo.>"C:\Users\cloud_user\check7.txt"    
 echo Build_Number %1
     echo response is %errorlevel%
