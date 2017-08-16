@@ -1,3 +1,4 @@
+del backup_script_called.txt
 echo.>"C:\Users\cloud_user\backup_script_called.txt"
 waitfor StartBatchCommand /t 20
 SET DatabaseBackupPath=D:\db\dbbackup
