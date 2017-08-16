@@ -1,5 +1,5 @@
 echo.>"C:\Users\cloud_user\check1.txt"
-waitfor StartBatchCommand /t 20
+waitfor StartBatchCommand /t 03
 SET DatabaseBackupPath=D:\db\dbbackup
 
 FOR /F "delims=|" %%I IN ('DIR "%DatabaseBackupPath%\*.001" /B /O:D') DO SET  NewestFile=%%I
@@ -23,7 +23,7 @@ echo.>"C:\Users\cloud_user\check4.txt"
 if %fileSize% GTR %temp1% (
    echo File is greater than %minbytesize% bytes 
    set /A temp1=%fileSize%
-   waitfor click /t 120
+   waitfor click /t 03
    echo peter
    goto :loop
 echo.>"C:\Users\cloud_user\check5.txt" 
