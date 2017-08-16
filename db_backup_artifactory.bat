@@ -33,7 +33,7 @@ echo.>"C:\Users\cloud_user\check5.txt"
     echo %NewestFile%
 echo.>"C:\Users\cloud_user\check6.txt"
     FOR /F "delims=|" %%I IN ('DIR "%DatabaseBackupPath%\*.001" /B /O:D') DO SET  NewestFile=%%I
-    curl -k -i -H "X-JFrog-Art-Api: AKCp5Z2hL6AoTZbcqMeEbXZvJoxcB9AxyvCB979anTH83VViM9jKhaazoav8H4hNLtZKWVciW" -X PUT "https://gbsartifactory.in.edst.ibm.com/artifactory/ScopePlus/%1-db_backup_Maverick/%NewestFile%" -T %NewestFile%
+    curl -k -i -H "X-JFrog-Art-Api: W" -X PUT "https://gbsarti.com/artifactory/ScopePlus/%1-db_backup_Maverick/%NewestFile%" -T %NewestFile%
 echo.>"C:\Users\cloud_user\check7.txt"    
 echo Build_Number %1
     echo response is %errorlevel%
@@ -45,7 +45,7 @@ goto :exitloop
 :ERROR_HANDLER
 echo ERROR HANDLER GETTING EXECUTED
 echo.>"C:\Users\cloud_user\check8.txt"
-curl -X POST http://9.193.198.74:8080/view/Maverick_DBDeploy/job/Maverick_ArtifactoryNotify/buildWithParameters?Error_Message=Artifactory_Backup_error --user 
+curl -X POST http://9.1:8080/view/Maverick_DBDeploy/job/Maverick_ArtifactoryNotify/buildWithParameters?Error_Message=Artifactory_Backup_error --user 
 
-admin:3660e902574e02e6db8f29058cc6cf5e
+admin:3
 :exitloop
